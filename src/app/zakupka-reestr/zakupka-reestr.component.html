@@ -1,0 +1,84 @@
+<div class="Top-container">
+  <h1>Ресстр закупок</h1>
+  <div class="row">
+    <mat-form-field class="example-form-field" appearance="outline">
+      <mat-label>Поиск</mat-label>
+      <input matInput type="text" [(ngModel)]="value">
+      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Колонки</mat-label>
+      <mat-select [formControl]="displayedColumns" multiple>
+        <mat-option *ngFor="let column of displayedColumnsList" [value]="column">{{column}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button style="background: #FBE180;">
+      <mat-icon>show_chart</mat-icon>
+      Сформировать отчет
+    </button>
+  </div>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- 'selected','number','data_start','name_izdel','project', 'customer','type_zakup','status' -->
+
+  <ng-container matColumnDef="selected">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let element" >
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(element) : null"
+                    [checked]="selection.isSelected(element)"
+                    [aria-label]="checkboxLabel(element)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="number">
+    <th mat-header-cell *matHeaderCellDef> № </th>
+    <td mat-cell *matCellDef="let element" > {{element.number}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date_start">
+    <th mat-header-cell *matHeaderCellDef> Дата получения </th>
+    <td mat-cell *matCellDef="let element" > {{element.date_start | date:'dd.MM.yyyy': "UTC"}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name_izdel">
+    <th mat-header-cell *matHeaderCellDef> Наименование изделия </th>
+    <td mat-cell *matCellDef="let element" > {{element.name_izdel}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="project">
+    <th mat-header-cell *matHeaderCellDef> Проект </th>
+    <td mat-cell *matCellDef="let element" > {{element.project}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="customer">
+    <th mat-header-cell *matHeaderCellDef> Поставщик </th>
+    <td mat-cell *matCellDef="let element" > {{element.customer }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type_zakup">
+    <th mat-header-cell *matHeaderCellDef> Способ закупки </th>
+    <td mat-cell *matCellDef="let element" > {{element.type_zakup }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Статус </th>
+    <td mat-cell *matCellDef="let element" > {{element.status}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="ds"></tr>
+  <tr mat-row *matRowDef="let row; columns: ds;"
+  [routerLink]="['/zakupka/'+row.number]"></tr>
+</table>
+

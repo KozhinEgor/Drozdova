@@ -1,0 +1,105 @@
+<div class="hight-column">
+  <div class="new_message">
+    <div class="bottom">
+      <mat-icon class="name">mail</mat-icon>
+      Новые письма
+    </div>
+    <div class="new_mes">
+      <mat-icon >
+        notifications
+      </mat-icon>
+      <span>Тема: Согласование заказа на закупку</span>
+
+    </div>
+    <div class="new_mes">
+      <mat-icon>
+        notifications
+      </mat-icon>
+      Тема: Закупочная ведомость
+    </div>
+    <div class="new_mes">
+      <mat-icon>
+        notifications
+      </mat-icon>
+      Тема: Коммерческое предложение
+    </div>
+    <div class="new_mes">
+      <mat-icon>
+        notifications
+      </mat-icon>
+      Тема: Договор на поставку
+    </div>
+  </div>
+  <div class="zadachi">
+    <div class="bottom">
+      <mat-icon class="name">list</mat-icon>
+      Задачи
+    </div>
+    <div class="new_mes">
+      <mat-icon>
+        task_alt
+      </mat-icon>
+      Создать закупку по закупочной ведомости №11233
+    </div>
+    <div class="new_mes">
+      <mat-icon>
+        task_alt
+      </mat-icon>
+      Согласовать заказ №1783
+    </div>
+    <div class="new_mes">
+      <mat-icon>
+        task_alt
+      </mat-icon>
+      Отправить запрос КП на закупку №
+    </div>
+    <div class="new_mes">
+      <mat-icon>
+        task_alt
+      </mat-icon>
+      Заключить договор по закупке №
+    </div>
+  </div>
+</div>
+
+<div class="grafick">
+  <div class="bottom">
+    <mat-icon class="name">calendar_month</mat-icon>
+    График поставок
+  </div>
+  <div class="body-grafick">
+  <table class="table_block">
+    <tr>
+      <th > </th>
+      <th *ngFor="let a of [].constructor(31); let i = index " [ngClass]="{'red' : isRed(i+1)}">{{i+1}}</th>
+    </tr>
+    <tr>
+      <td>Закупка 1 </td>
+      <td *ngFor="let a of [].constructor(31); let i = index " [ngClass]="{'red' : isRed(i+1), 'yellow': i+1 == 10}"></td>
+    </tr>
+    <tr>
+      <td >Закупка 2 </td>
+      <td *ngFor="let a of [].constructor(31); let i = index " [ngClass]="{'red' : isRed(i+1), 'green': i+1 == 8}"></td>
+    </tr>
+    <tr>
+      <td >Закупка 3 </td>
+      <td *ngFor="let a of [].constructor(31); let i = index "[ngClass]="{'red' : isRed(i+1), 'orange': i+1 == 9}"></td>
+    </tr>
+    <tr>
+      <td >Закупка 4 </td>
+      <td *ngFor="let a of [].constructor(31); let i = index " [ngClass]="{'red' : isRed(i+1)}"></td>
+    </tr>
+    <tr>
+      <td >Закупка 5 </td>
+      <td *ngFor="let a of [].constructor(31); let i = index " [ngClass]="{'red' : isRed(i+1)}"></td>
+    </tr>
+    <tr>
+      <td style="border-bottom: 0px;">Закупка 6 </td>
+      <td style="border-bottom: 0px;" *ngFor="let a of [].constructor(31); let i = index " [ngClass]="{'red' : isRed(i+1)}"></td>
+    </tr>
+  </table>
+    <div class="bottom-grafik">
+      <h3>Дни: </h3><div class="squard" style="background: #A6E3DE"></div> текущий день <div class="squard" style="background: #FFE3E3"></div> выходной <h3>Этапы: </h3> <div class="squard" style="background: #FFF9C7"></div> запланирован <div class="squard" style="background: #BCFFCB"></div> выполнен <div class="squard" style="background: #FF6E40"></div> не выполнен
+    </div>
+  </div>
+</div>

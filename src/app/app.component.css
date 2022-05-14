@@ -1,0 +1,24 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar{
+  overflow: hidden;
+  height: 5vh;
+  font-size: 16px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover, a:active{
+  color: darkgray;
+}
+.window{
+width: auto;
+  height: 34px;
+  background: #C4EBE7;
+  border: 1px solid #81D8D0;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 15px 15px;
+}
+
