@@ -340,8 +340,8 @@ export const Zakupka:zakupka[] = [
 export const Postav: ReestrPostavshik[] = [
   {
   name:'ООО "ДНС Ритейл"',
-  reiting: 10,
-  number_zak: 2,
+  reiting: 9.6,
+  number_zak: 12,
   fio_cont: 'Иванов Иван Иванович',
   email_cont: 'ivan@ya.ru',
   dol_cont: 'менеджер',
@@ -367,7 +367,7 @@ export const Postav: ReestrPostavshik[] = [
       price: 19500,
       srock: '1 месяц',
       uslov: 'Предоплата',
-      reiting: 7
+      reiting: 9.5
     },
     {
       name_izdel:'Кабель питания',
@@ -375,7 +375,7 @@ export const Postav: ReestrPostavshik[] = [
       price: 7200,
       srock: '2 недели',
       uslov: 'Постоплата',
-      reiting: 10
+      reiting: 8.7
     },
     {
       name_izdel:'Антенна',
@@ -383,14 +383,14 @@ export const Postav: ReestrPostavshik[] = [
       price: 5247,
       srock: '3 недели',
       uslov: 'Частичная предоплата',
-      reiting: 10
+      reiting: 9.6
     }
   ]
 },
   {
     name:'ООО "М-Инвест"',
-    reiting: 7,
-    number_zak: 4,
+    reiting: 8.6,
+    number_zak: 7,
     fio_cont: 'Алекесей Васильев Воробьев',
     email_cont: 'ilVasVob@ya.ru',
     dol_cont: 'менеджер',
@@ -438,8 +438,8 @@ export const Postav: ReestrPostavshik[] = [
   },
   {
     name:'ООО "Микротех"',
-    reiting: 6,
-    number_zak: 4,
+    reiting: 9.3,
+    number_zak: 9,
     fio_cont: 'Иванов Петрович Петр',
     email_cont: 'ivanPetrovich@ya.ru',
     dol_cont: 'менеджер',
@@ -487,8 +487,8 @@ export const Postav: ReestrPostavshik[] = [
   },
   {
     name:'ООО "ФРЕГАТ"',
-    reiting: 4,
-    number_zak: 3,
+    reiting: 7.8,
+    number_zak: 5,
     fio_cont: 'Петр Иван Иванович',
     email_cont: 'petr@ya.ru',
     dol_cont: 'менеджер',
