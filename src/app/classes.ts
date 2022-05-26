@@ -59,11 +59,28 @@ export interface Doc{
   name: string;
   date:Date;
 }
-export interface ReestrPostavshik{
-  name:string;
-  izd:string;
-  tech:string;
+export interface ProdPost{
+  name_izdel:string;
+  tech_spec:string;
   price: number;
   srock: string;
-  usl:string;
+  uslov: string;
+  reiting: number;
+}
+export interface ReestrPostavshik{
+  name:string;
+  reiting: number;
+  number_zak: number;
+  fio_cont:string;
+  email_cont:string;
+  dol_cont:string;
+  tel_cont:string;
+  sait:string;
+  address:string;
+  inn:string;
+  kpp:string;
+  bik:string;
+  rasChet:string;
+  korSchet:string;
+  prod:ProdPost[];
 }

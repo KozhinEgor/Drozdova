@@ -28,11 +28,11 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSelectModule} from "@angular/material/select";
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatTabsModule} from "@angular/material/tabs";
 
 const routes = [
   {path: 'home', component: HomeComponent},
   {path: 'otchet', component: OtchetComponent},
-  {path: 'postavshik', component: PostavshikComponent},
   {path: 'postavshikReestr', component: PostavshikReestrComponent},
   {path: 'reestrZakaz', component: ZakazReestrComponent},
   {path: 'sklad', component: SkladComponent},
@@ -42,6 +42,7 @@ const routes = [
   {path: 'zakupkaReestr', component: ZakupkaReestrComponent},
   {path: 'documents', component: DocumentsComponent},
   {path: 'zakupka/:id', component: ZakupkaComponent},
+  {path: 'postavshik/:id', component: PostavshikComponent},
   {path: '**', redirectTo:'home'}
 ];
 
@@ -62,23 +63,24 @@ const routes = [
     DialogComponent,
     DocumentsComponent
   ],
-    imports: [
-        RouterModule.forRoot(routes),
-        BrowserModule,
-        MatIconModule,
-        BrowserAnimationsModule,
-        MatMenuModule,
-        MatToolbarModule,
-        MatButtonModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatTableModule,
-        MatCheckboxModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        MatDialogModule
-    ],
+  imports: [
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatTabsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
