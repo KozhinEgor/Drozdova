@@ -8,6 +8,13 @@ export interface zakup{
   iniator:string;
   project:string;
   date_plan_end:Date;
+  izdel: zakupIzdel[];
+}
+export interface zakupIzdel{
+  name: string;
+  tech_spec:string;
+  number: number;
+  number_sklad:number;
 }
 export interface zakupka{
   number: number;
@@ -25,6 +32,7 @@ export interface zakupka{
 }
 export interface zakaz{
   number:number;
+  zakup:number;
   date_start:Date;
   project:string;
   status:string;

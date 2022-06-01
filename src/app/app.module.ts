@@ -29,6 +29,8 @@ import {MatSelectModule} from "@angular/material/select";
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatTabsModule} from "@angular/material/tabs";
+import {WindowsService} from "./WindowsService";
+import {ExceptionZakupVedomComponent} from "./exception-zakup-vedom/exception-zakup-vedom.component";
 
 const routes = [
   {path: 'home', component: HomeComponent},
@@ -36,12 +38,14 @@ const routes = [
   {path: 'postavshikReestr', component: PostavshikReestrComponent},
   {path: 'reestrZakaz', component: ZakazReestrComponent},
   {path: 'sklad', component: SkladComponent},
-  {path: 'zakaz', component: ZakazComponent},
+
   {path: 'zakup', component: ZakupComponent},
-  {path: 'zakupVedomost', component: ZakupVedomostComponent},
+
   {path: 'zakupkaReestr', component: ZakupkaReestrComponent},
   {path: 'documents', component: DocumentsComponent},
   {path: 'zakupka/:id', component: ZakupkaComponent},
+  {path: 'zakupVedomost/:id', component: ZakupVedomostComponent},
+  {path: 'zakaz/:id', component: ZakazComponent},
   {path: 'postavshik/:id', component: PostavshikComponent},
   {path: '**', redirectTo:'home'}
 ];
@@ -61,7 +65,8 @@ const routes = [
     OtchetComponent,
     ZakazReestrComponent,
     DialogComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    ExceptionZakupVedomComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {zakup, zakupka} from "../classes";
 import {MatTableDataSource} from "@angular/material/table";
 import {SelectionModel} from "@angular/cdk/collections";
 import {FormControl} from "@angular/forms";
 import {Zakupka} from "../Data";
+import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-zakupka-reestr',
@@ -46,6 +47,5 @@ export class ZakupkaReestrComponent implements OnInit {
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${this.dataSource.data.indexOf(row)}`;
   }
-
 
 }

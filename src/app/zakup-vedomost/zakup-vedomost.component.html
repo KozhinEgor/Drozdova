@@ -1,1 +1,75 @@
-<p>zakup-vedomost works!</p>
+<div class="Top-container">
+  <h1 class="namePage">Редактирование закупчной ведомости</h1>
+  <div class="row">
+    <h1 class="numberDate">Закупочная ведомость №{{zakupVedom.number}}</h1>
+    <h1 class="numberDate"> от {{ zakupVedom.date_start | date:'dd.MM.yyyy': "UTC" }}</h1>
+<!--    <mat-form-field appearance="outline" >-->
+<!--      <mat-label>Статус</mat-label>-->
+<!--      <mat-select [(value)]="selectedStatus">-->
+<!--        <mat-option [value]="option" *ngFor="let option of status" [disabled]="status.indexOf(option)>status.indexOf(selectedStatus)+1 || status.indexOf(option)<status.indexOf(selectedStatus)">{{option}}</mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+  </div>
+  <div class="row">
+    <div class="infoByZakupka">
+      Проект: {{zakupVedom.project}}
+    </div>
+    <div class="infoByZakupka">
+      Инициатор: {{zakupVedom.iniator}}
+    </div>
+    <button mat-button
+            (click)="openDialog()">
+      <mat-icon>note_add</mat-icon>
+      Создать на основании (заказ)
+    </button>
+    <button mat-button
+            (click)="rezerv()">
+      Зарезервировать
+    </button>
+  </div>
+
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 grayheader" >
+
+  <!--- 'select','name', 'tech', 'number', 'number_sklad' -->
+
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{'is-red': element.number_sklad === 0,'is-yel': element.number_sklad  < 5 && element.number_sklad  > 0}">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(element) : null"
+                    [checked]="selection.isSelected(element)"
+                    [aria-label]="checkboxLabel(element)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Название </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{'is-red': element.number_sklad === 0,'is-yel': element.number_sklad  < 5 && element.number_sklad  > 0}"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tech">
+    <th mat-header-cell *matHeaderCellDef> Технические характеристики </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{'is-red': element.number_sklad === 0,'is-yel': element.number_sklad  < 5 && element.number_sklad  > 0}"> {{element.tech}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="number">
+    <th mat-header-cell *matHeaderCellDef> Количество </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{'is-red': element.number_sklad === 0,'is-yel': element.number_sklad  < 5 && element.number_sklad  > 0}"> {{element.number}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="number_sklad">
+    <th mat-header-cell *matHeaderCellDef> Количество на складе </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{'is-red': element.number_sklad === 0,'is-yel': element.number_sklad  < 5 && element.number_sklad  > 0}"> {{element.number_sklad}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+</table>

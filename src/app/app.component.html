@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <mat-toolbar style="background: #81D8D0">
   <button  mat-button class="example-icon" [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
@@ -51,9 +52,14 @@
   </button>
 </mat-menu>
 <!--<div *ngFor="let window of windows">-->
-<!--  <div class ="window">-->
+<!--  <div class ="window" (click)="open(window)">-->
 <!--    {{window.name}}-->
-<!--    <mat-icon>exit</mat-icon>-->
+<!--    <button mat-icon-button (click)="delete(window)">-->
+
+<!--      <mat-icon class="material-symbols-outlined">-->
+<!--        close-->
+<!--      </mat-icon>-->
+<!--    </button>-->
 <!--  </div>-->
 <!--</div>-->
 <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import {ProdPost, ProductPostavshick, ReestrPostavshik, zakupka} from "./classes";
+import {ProdPost, ProductPostavshick, ReestrPostavshik, zakaz, zakup, zakupka} from "./classes";
 
 export const Zakupka:zakupka[] = [
   {number: 1331,
@@ -533,5 +533,89 @@ export const Postav: ReestrPostavshik[] = [
         reiting: 4
       }
     ]
+  }
+]
+export const zakupVedomost:zakup[]=[
+  {number: 11233,
+    date_start:new Date("12-09-2021"),
+    iniator:'Иванов И.И.',
+    project:'LTE-Мобильная',
+    date_plan_end:new Date("01-07-2022"),
+    izdel:[{
+    name:'Коммутатор',
+      tech_spec:'ALLIED TELESIS AT-GS950/16-50',
+      number:2,
+      number_sklad:1
+    },
+      {
+        name:'Антенна',
+        tech_spec:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+        number:3,
+        number_sklad:0
+      },{
+        name:'Источник питания импульсный',
+        tech_spec:'0-60V-30A/QJE',
+        number:1,
+        number_sklad:0
+      },{
+        name:'Источник питания',
+        tech_spec:'APS-1262',
+        number:5,
+        number_sklad:6
+      }]
+  },
+  {number: 11234,
+    date_start:new Date("12-11-2021"),
+    iniator:'Петров А.А.',
+    project:'Афина 223',
+    date_plan_end:new Date("01-19-2022"),
+    izdel:[]
+  },
+  {number: 11235,
+    date_start:new Date("12-20-2021"),
+    iniator:'Иванов И.И.',
+    project:'LTE-Стационарная',
+    date_plan_end:new Date("01-20-2022"),
+    izdel:[]
+  },
+  {number: 11236,
+    date_start:new Date("12-23-2021"),
+    iniator:'Петров А.А.',
+    project:'LTE-Мобильная',
+    date_plan_end:new Date("01-30-2022"),
+    izdel:[]
+  }
+]
+
+export const zakazs:zakaz[]=[{
+  number: 11233,
+  zakup: 11233,
+  date_start:new Date("12-09-2021"),
+  project:'LTE-Мобильная',
+  status:'Согласован'
+},
+  {number: 1332,
+    zakup: 11234,
+    date_start:new Date("12-11-2021"),
+    project:'Афина',
+    status:'Не согласован'
+  },
+  {number: 1333,
+    zakup: 11235,
+    date_start:new Date("12-29-2021"),
+    project:'AMGH',
+    status:'Отправлен на согласование'
+  },
+  {number: 1334,
+    zakup: 11236,
+    date_start:new Date("01-01-2022"),
+    project:'LTE-Advanced',
+    status:'Создан'
+  },
+  {number: 1335,
+    zakup: 11236,
+    date_start:new Date("01-11-2022"),
+    project:'ZNVR',
+    status:'Создан'
   }
 ]
