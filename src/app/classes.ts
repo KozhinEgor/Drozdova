@@ -35,7 +35,15 @@ export interface zakaz{
   zakup:number;
   date_start:Date;
   project:string;
+  date_post:Date;
   status:string;
+  izdel:zakazIzdel[];
+}
+export interface zakazIzdel{
+  name:string;
+  tech:string;
+  price:number;
+  number:number;
 }
 export interface sklad{
   name_izdel:string;

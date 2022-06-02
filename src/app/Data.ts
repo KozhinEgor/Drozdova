@@ -591,31 +591,141 @@ export const zakazs:zakaz[]=[{
   number: 11233,
   zakup: 11233,
   date_start:new Date("12-09-2021"),
+  date_post:new Date("01-09-2022"),
   project:'LTE-Мобильная',
-  status:'Согласован'
+  status:'Согласован',
+  izdel:[{
+    name:'Коммутатор',
+    tech:'ALLIED TELESIS AT-GS950/16-50',
+    price:10216,
+    number:1
+  },{
+    name:'Антенна',
+    tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+    price:5247,
+    number:3
+  },{
+    name:'Источник питания импульсный',
+    tech:'0-60V-30A/QJE',
+    price:20600,
+    number:1
+  },{
+    name:'Источник питания',
+    tech:'APS-1262',
+    price:19500,
+    number:10
+  }]
 },
   {number: 1332,
     zakup: 11234,
     date_start:new Date("12-11-2021"),
+    date_post:new Date("01-09-2022"),
     project:'Афина',
-    status:'Не согласован'
+    status:'Не согласован',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
   },
   {number: 1333,
     zakup: 11235,
     date_start:new Date("12-29-2021"),
+    date_post:new Date("01-09-2022"),
     project:'AMGH',
-    status:'Отправлен на согласование'
+    status:'Отправлен на согласование',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
   },
   {number: 1334,
     zakup: 11236,
     date_start:new Date("01-01-2022"),
+    date_post:new Date("01-09-2022"),
     project:'LTE-Advanced',
-    status:'Создан'
+    status:'Создан',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
   },
   {number: 1335,
     zakup: 11236,
     date_start:new Date("01-11-2022"),
+    date_post:new Date("01-09-2022"),
     project:'ZNVR',
-    status:'Создан'
+    status:'Создан',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
   }
 ]

@@ -64,14 +64,14 @@ export class ZakupVedomostComponent implements OnInit {
   }
   openDialog(){
       this.dialog.open(ExceptionZakupVedomComponent, {data:''}).afterClosed().subscribe(data =>{
-        console.log(typeof data);
+
         if(data === 'null'){
 
         }
         else if( data === 'true'){
-          console.log(data);
+
           this.rezerv();
-          console.log(zakazs.find(a => a.zakup = this.zakupVedom.number)?.number);
+
           this.router.navigate(["zakaz/"+zakazs.find(a => a.zakup = this.zakupVedom.number)?.number]);
         }
         else if(data === 'false')
