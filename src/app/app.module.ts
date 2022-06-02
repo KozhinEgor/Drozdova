@@ -31,6 +31,8 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatTabsModule} from "@angular/material/tabs";
 import {WindowsService} from "./WindowsService";
 import {ExceptionZakupVedomComponent} from "./exception-zakup-vedom/exception-zakup-vedom.component";
+import { AddZakupkaComponent } from './add-zakupka/add-zakupka.component';
+import {MatListModule} from "@angular/material/list";
 
 const routes = [
   {path: 'home', component: HomeComponent},
@@ -66,7 +68,8 @@ const routes = [
     ZakazReestrComponent,
     DialogComponent,
     DocumentsComponent,
-    ExceptionZakupVedomComponent
+    ExceptionZakupVedomComponent,
+    AddZakupkaComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -84,7 +87,8 @@ const routes = [
     MatSelectModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

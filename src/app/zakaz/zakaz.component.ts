@@ -6,6 +6,7 @@ import {zakaz, zakazIzdel, zakupka} from "../classes";
 import {MatTableDataSource} from "@angular/material/table";
 import {SelectionModel} from "@angular/cdk/collections";
 import {DialogComponent} from "../dialog/dialog.component";
+import {AddZakupkaComponent} from "../add-zakupka/add-zakupka.component";
 
 @Component({
   selector: 'app-zakaz',
@@ -26,7 +27,7 @@ export class ZakazComponent implements OnInit {
   status =['Создан','Отправлен на согласование','Не согласован','Согласован'];
   ds = ['selected', 'num', 'name','tech','price','number','sum'];
   dataSource = new MatTableDataSource<zakazIzdel>();
-  constructor(private route: ActivatedRoute,public dialog: MatDialog,private router: Router) { }
+  constructor(private route: ActivatedRoute,public dialog: MatDialog,private router: Router) {}
 
   ngOnInit(): void {
 
@@ -74,14 +75,9 @@ export class ZakazComponent implements OnInit {
     this.dialog.open(DialogComponent,{data: message})
   }
   openZakup(){
-    this.openDialog('Открыты окна с закупками по заказу №'+this.zakaz.number);
-    var num:number[]=Zakupka.filter(a => a.zakaz = this.zakaz.number).map(a => a.number);
-
-    console.log(this.route.url);
-    for(var n of num){
-      // window.open(''+num);
-      // this.router.navigate(["zakaz/"+Zakupka.find(a => a.zakaz = this.zakaz.number)?.number]);
-    }
-
+    this.dialog.open(AddZakupkaComponent, {data:this.zakaz.number})
+  }
+  getTotalCost(){
+    return this.zakaz.izdel.map(t => (t.number * t.price)).reduce((acc, value) => acc + value, 0);
   }
 }
