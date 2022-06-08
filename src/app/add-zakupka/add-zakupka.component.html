@@ -1,0 +1,12 @@
+<h1 mat-dialog-title align="cener">Создана закупки</h1>
+<div mat-dialog-content align="center" >
+  <mat-list *ngFor="let a of numberZakupka">
+    <mat-list-item>
+      <a routerLink="/zakupka/{{a}}" target="_blank" > Закупка {{a}}</a>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-dialog-close="">Закрыть</button>
+</div>
