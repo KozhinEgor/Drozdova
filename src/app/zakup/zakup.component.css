@@ -37,3 +37,6 @@ td.is-yel {
 td.is-gre {
   background: rgba(194, 231, 202, 0.65);
 }
+.mat-row:nth-child(2n+1){
+  background-color: #f6f6f6;
+}

@@ -7,6 +7,6 @@ import {window} from "./classes";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  windows: window[] = [{name:'Закупочная ведомость',link:'aass'}];
+  // windows: window[] = [{name:'Закупочная ведомость',link:'aass'}];
   title = 'Drozdova';
 }

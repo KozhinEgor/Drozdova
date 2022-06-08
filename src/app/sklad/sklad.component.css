@@ -32,4 +32,7 @@ table{
 .mat-cell{
   font-size: 16px;
 }
+.mat-row:nth-child(2n+1){
+  background-color: #f6f6f6;
+}
 

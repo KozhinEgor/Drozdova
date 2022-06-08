@@ -1,0 +1,35 @@
+<div class="parent">
+  <div class="block">
+    <div class="header">АО “ГлобалИнформСервис”</div>
+    <div class="row">
+      <div class = "text">Авторизация пользователя</div>
+    </div>
+    <div class="row" style="margin-top: 50px">
+      <div class = "logpas">Логин</div>
+      <div>
+        <mat-form-field appearance="outline">
+          <!--        <mat-label>Введите логин</mat-label>-->
+          <input matInput>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row" style="margin-top: 25px">
+      <div class = "logpas">Пароль</div>
+      <mat-form-field appearance="outline">
+<!--        <mat-label>Введите пароль</mat-label>-->
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+  </div>
+    <div class="row" style="margin-top: 50px">
+      <button mat-button class="entry" routerLink="['/']">
+        Войти
+      </button>
+    </div>
+
+  </div>
+
+</div>

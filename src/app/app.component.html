@@ -8,7 +8,7 @@
 
   <span class="example-spacer"></span>
 
-  <button  mat-button class="example-icon" >
+  <button  mat-button class="example-icon"  [routerLink]="['/auth']">
     <mat-icon>person</mat-icon>
     Пользователь
     <mat-icon>arrow_drop_down</mat-icon>
@@ -50,10 +50,5 @@
     <span>Документы</span>
   </button>
 </mat-menu>
-<!--<div *ngFor="let window of windows">-->
-<!--  <div class ="window">-->
-<!--    {{window.name}}-->
-<!--    <mat-icon>exit</mat-icon>-->
-<!--  </div>-->
-<!--</div>-->
+
 <router-outlet></router-outlet>

@@ -28,9 +28,11 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSelectModule} from "@angular/material/select";
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { AuthComponent } from './auth/auth.component';
 
 const routes = [
   {path: 'home', component: HomeComponent},
+  {path: 'auth', component: AuthComponent},
   {path: 'otchet', component: OtchetComponent},
   {path: 'postavshik', component: PostavshikComponent},
   {path: 'postavshikReestr', component: PostavshikReestrComponent},
@@ -43,6 +45,7 @@ const routes = [
   {path: 'documents', component: DocumentsComponent},
   {path: 'zakupka/:id', component: ZakupkaComponent},
   {path: '**', redirectTo:'home'}
+
 ];
 
 @NgModule({
@@ -60,7 +63,8 @@ const routes = [
     OtchetComponent,
     ZakazReestrComponent,
     DialogComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    AuthComponent
   ],
     imports: [
         RouterModule.forRoot(routes),
