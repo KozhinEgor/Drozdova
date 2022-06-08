@@ -53,6 +53,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="ds"></tr>
-  <tr mat-row *matRowDef="let row; columns: ds;"></tr>
+  <tr mat-row *matRowDef="let row; columns: ds;"
+      [routerLink]="['/zakaz/'+row.number]"></tr>
 </table>
 

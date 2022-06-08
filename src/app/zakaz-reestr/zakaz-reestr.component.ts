@@ -2,32 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {zakaz, zakupka} from "../classes";
 import {SelectionModel} from "@angular/cdk/collections";
-const DATA:zakaz[]=[{number: 11233,
-  date_start:new Date("12-09-2021"),
-  project:'LTE-Мобильная',
-  status:'Согласован'
-},
-{number: 1332,
-  date_start:new Date("12-11-2021"),
-  project:'Афина',
-  status:'Не согласован'
-},
-{number: 1333,
-  date_start:new Date("12-29-2021"),
-  project:'AMGH',
-  status:'Отправлен на согласование'
-},
-{number: 1334,
-  date_start:new Date("01-01-2022"),
-  project:'LTE-Advanced',
-  status:'Создан'
-},
-{number: 1335,
-  date_start:new Date("01-11-2022"),
-  project:'ZNVR',
-  status:'Создан'
-}
-]
+import {zakazs} from "../Data";
+
 
 @Component({
   selector: 'app-zakaz-reestr',
@@ -36,7 +12,7 @@ const DATA:zakaz[]=[{number: 11233,
 })
 export class ZakazReestrComponent implements OnInit {
   ds = ['selected','number','date_start','project','status']
-  dataSource = new MatTableDataSource<zakaz>(DATA);
+  dataSource = new MatTableDataSource<zakaz>(zakazs);
   value = '';
   selection = new SelectionModel<zakaz>(true, []);
   constructor() { }

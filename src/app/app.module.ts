@@ -30,22 +30,29 @@ import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { AuthComponent } from './auth/auth.component';
 
+import {MatTabsModule} from "@angular/material/tabs";
+import {WindowsService} from "./WindowsService";
+import {ExceptionZakupVedomComponent} from "./exception-zakup-vedom/exception-zakup-vedom.component";
+import { AddZakupkaComponent } from './add-zakupka/add-zakupka.component';
+import {MatListModule} from "@angular/material/list";
+
 const routes = [
   {path: 'home', component: HomeComponent},
   {path: 'auth', component: AuthComponent},
   {path: 'otchet', component: OtchetComponent},
-  {path: 'postavshik', component: PostavshikComponent},
   {path: 'postavshikReestr', component: PostavshikReestrComponent},
   {path: 'reestrZakaz', component: ZakazReestrComponent},
   {path: 'sklad', component: SkladComponent},
-  {path: 'zakaz', component: ZakazComponent},
+
   {path: 'zakup', component: ZakupComponent},
-  {path: 'zakupVedomost', component: ZakupVedomostComponent},
+
   {path: 'zakupkaReestr', component: ZakupkaReestrComponent},
   {path: 'documents', component: DocumentsComponent},
   {path: 'zakupka/:id', component: ZakupkaComponent},
+  {path: 'zakupVedomost/:id', component: ZakupVedomostComponent},
+  {path: 'zakaz/:id', component: ZakazComponent},
+  {path: 'postavshik/:id', component: PostavshikComponent},
   {path: '**', redirectTo:'home'}
-
 ];
 
 @NgModule({
@@ -64,25 +71,30 @@ const routes = [
     ZakazReestrComponent,
     DialogComponent,
     DocumentsComponent,
-    AuthComponent
+    AuthComponent,
+    DocumentsComponent,
+    ExceptionZakupVedomComponent,
+    AddZakupkaComponent
   ],
-    imports: [
-        RouterModule.forRoot(routes),
-        BrowserModule,
-        MatIconModule,
-        BrowserAnimationsModule,
-        MatMenuModule,
-        MatToolbarModule,
-        MatButtonModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatTableModule,
-        MatCheckboxModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        MatDialogModule
-    ],
+  imports: [
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatListModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

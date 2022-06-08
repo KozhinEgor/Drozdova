@@ -10,7 +10,7 @@ import {Postav} from "../Data";
   styleUrls: ['./postavshik-reestr.component.css']
 })
 export class PostavshikReestrComponent implements OnInit {
-  ds = ['selected','num','name','izd','tech','price','srock','usl'];
+  ds = ['selected','num','name','reiting','number_zak','fio_cont','email_cont'];
   dataSource = new MatTableDataSource<ReestrPostavshik>(Postav);
   value = '';
   constructor() { }

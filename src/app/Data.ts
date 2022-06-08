@@ -1,4 +1,4 @@
-import {ProductPostavshick, ReestrPostavshik, zakupka} from "./classes";
+import {ProdPost, ProductPostavshick, ReestrPostavshik, zakaz, zakup, zakupka} from "./classes";
 
 export const Zakupka:zakupka[] = [
   {number: 1331,
@@ -337,35 +337,395 @@ export const Zakupka:zakupka[] = [
       }]
   }
 ]
-export const Postav: ReestrPostavshik[] = [{
+export const Postav: ReestrPostavshik[] = [
+  {
   name:'ООО "ДНС Ритейл"',
-  izd:'Коммутатор',
-  tech:'ALLIED TELESIS AT-GS950/16-50',
-  price: 10216,
-  srock: '1 неделя',
-  usl:'Постоплата'
-}, {
+  reiting: 9.6,
+  number_zak: 12,
+  fio_cont: 'Иванов Иван Иванович',
+  email_cont: 'ivan@ya.ru',
+  dol_cont: 'менеджер',
+  tel_cont: '89156532113',
+  sait: 'dns-reteil.ru',
+  address: 'Москва',
+  inn: '123456768765',
+  kpp: '123312456789',
+  bik: '123444',
+  rasChet: '321435222',
+  korSchet: '123123123',
+  prod:[{
+    name_izdel:'Коммутатор',
+    tech_spec:'ALLIED TELESIS AT-GS950/16-50',
+    price: 10216,
+    srock: '1 неделя',
+    uslov: 'Постоплата',
+    reiting: 10
+  },
+    {
+      name_izdel:'Источник питания',
+      tech_spec:'APS-1262',
+      price: 19500,
+      srock: '1 месяц',
+      uslov: 'Предоплата',
+      reiting: 9.5
+    },
+    {
+      name_izdel:'Кабель питания',
+      tech_spec:'N-male/5D-FB 5m/N-male',
+      price: 7200,
+      srock: '2 недели',
+      uslov: 'Постоплата',
+      reiting: 8.7
+    },
+    {
+      name_izdel:'Антенна',
+      tech_spec:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price: 5247,
+      srock: '3 недели',
+      uslov: 'Частичная предоплата',
+      reiting: 9.6
+    }
+  ]
+},
+  {
     name:'ООО "М-Инвест"',
-    izd:'Источник питания',
-    tech:'APS-1262',
-    price: 19500,
-    srock: '1 месяц',
-    usl:'Предоплата'
+    reiting: 8.6,
+    number_zak: 7,
+    fio_cont: 'Алекесей Васильев Воробьев',
+    email_cont: 'ilVasVob@ya.ru',
+    dol_cont: 'менеджер',
+    tel_cont: '89156532113',
+    sait: 'dns-reteil.ru',
+    address: 'Москва',
+    inn: '123454328765',
+    kpp: '123312456789',
+    bik: '123444',
+    rasChet: '321435222',
+    korSchet: '123123123',
+    prod:[{
+      name_izdel:'Коммутатор',
+      tech_spec:'ALLIED TELESIS AT-GS950/16-50',
+      price: 10216,
+      srock: '1 неделя',
+      uslov: 'Постоплата',
+      reiting: 4
+    },
+      {
+        name_izdel:'Источник питания',
+        tech_spec:'APS-1262',
+        price: 19500,
+        srock: '1 месяц',
+        uslov: 'Предоплата',
+        reiting: 4
+      },
+      {
+        name_izdel:'Кабель питания',
+        tech_spec:'N-male/5D-FB 5m/N-male',
+        price: 7200,
+        srock: '2 недели',
+        uslov: 'Постоплата',
+        reiting: 4
+      },
+      {
+        name_izdel:'Антенна',
+        tech_spec:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+        price: 5247,
+        srock: '3 недели',
+        uslov: 'Частичная предоплата',
+        reiting: 4
+      }
+    ]
   },
   {
     name:'ООО "Микротех"',
-    izd:'Кабель питания',
-    tech:'N-male/5D-FB 5m/N-male',
-    price: 7200,
-    srock: '2 недели',
-    usl:'Постоплата'
+    reiting: 9.3,
+    number_zak: 9,
+    fio_cont: 'Иванов Петрович Петр',
+    email_cont: 'ivanPetrovich@ya.ru',
+    dol_cont: 'менеджер',
+    tel_cont: '89156532113',
+    sait: 'dns-reteil.ru',
+    address: 'Москва',
+    inn: '321456768765',
+    kpp: '123312456789',
+    bik: '123444',
+    rasChet: '321435222',
+    korSchet: '123123123',
+    prod:[{
+      name_izdel:'Коммутатор',
+      tech_spec:'ALLIED TELESIS AT-GS950/16-50',
+      price: 10216,
+      srock: '1 неделя',
+      uslov: 'Постоплата',
+      reiting: 4
+    },
+      {
+        name_izdel:'Источник питания',
+        tech_spec:'APS-1262',
+        price: 19500,
+        srock: '1 месяц',
+        uslov: 'Предоплата',
+        reiting: 4
+      },
+      {
+        name_izdel:'Кабель питания',
+        tech_spec:'N-male/5D-FB 5m/N-male',
+        price: 7200,
+        srock: '2 недели',
+        uslov: 'Постоплата',
+        reiting: 4
+      },
+      {
+        name_izdel:'Антенна',
+        tech_spec:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+        price: 5247,
+        srock: '3 недели',
+        uslov: 'Частичная предоплата',
+        reiting: 4
+      }
+    ]
   },
   {
     name:'ООО "ФРЕГАТ"',
-    izd:'Антенна',
+    reiting: 7.8,
+    number_zak: 5,
+    fio_cont: 'Петр Иван Иванович',
+    email_cont: 'petr@ya.ru',
+    dol_cont: 'менеджер',
+    tel_cont: '89156532113',
+    sait: 'dns-reteil.ru',
+    address: 'Москва',
+    inn: '123456762345',
+    kpp: '123312456789',
+    bik: '123444',
+    rasChet: '321435222',
+    korSchet: '123123123',
+    prod:[{
+      name_izdel:'Коммутатор',
+      tech_spec:'ALLIED TELESIS AT-GS950/16-50',
+      price: 10216,
+      srock: '1 неделя',
+      uslov: 'Постоплата',
+      reiting: 4
+    },
+      {
+        name_izdel:'Источник питания',
+        tech_spec:'APS-1262',
+        price: 19500,
+        srock: '1 месяц',
+        uslov: 'Предоплата',
+        reiting: 4
+      },
+      {
+        name_izdel:'Кабель питания',
+        tech_spec:'N-male/5D-FB 5m/N-male',
+        price: 7200,
+        srock: '2 недели',
+        uslov: 'Постоплата',
+        reiting: 4
+      },
+      {
+        name_izdel:'Антенна',
+        tech_spec:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+        price: 5247,
+        srock: '3 недели',
+        uslov: 'Частичная предоплата',
+        reiting: 4
+      }
+    ]
+  }
+]
+export const zakupVedomost:zakup[]=[
+  {number: 11233,
+    date_start:new Date("12-09-2021"),
+    iniator:'Иванов И.И.',
+    project:'LTE-Мобильная',
+    date_plan_end:new Date("01-07-2022"),
+    izdel:[{
+    name:'Коммутатор',
+      tech_spec:'ALLIED TELESIS AT-GS950/16-50',
+      number:2,
+      number_sklad:1
+    },
+      {
+        name:'Антенна',
+        tech_spec:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+        number:3,
+        number_sklad:0
+      },{
+        name:'Источник питания импульсный',
+        tech_spec:'0-60V-30A/QJE',
+        number:1,
+        number_sklad:0
+      },{
+        name:'Источник питания',
+        tech_spec:'APS-1262',
+        number:5,
+        number_sklad:6
+      }]
+  },
+  {number: 11234,
+    date_start:new Date("12-11-2021"),
+    iniator:'Петров А.А.',
+    project:'Афина 223',
+    date_plan_end:new Date("01-19-2022"),
+    izdel:[]
+  },
+  {number: 11235,
+    date_start:new Date("12-20-2021"),
+    iniator:'Иванов И.И.',
+    project:'LTE-Стационарная',
+    date_plan_end:new Date("01-20-2022"),
+    izdel:[]
+  },
+  {number: 11236,
+    date_start:new Date("12-23-2021"),
+    iniator:'Петров А.А.',
+    project:'LTE-Мобильная',
+    date_plan_end:new Date("01-30-2022"),
+    izdel:[]
+  }
+]
+
+export const zakazs:zakaz[]=[{
+  number: 11233,
+  zakup: 11233,
+  date_start:new Date("12-09-2021"),
+  date_post:new Date("01-09-2022"),
+  project:'LTE-Мобильная',
+  status:'Согласован',
+  izdel:[{
+    name:'Коммутатор',
+    tech:'ALLIED TELESIS AT-GS950/16-50',
+    price:10216,
+    number:1
+  },{
+    name:'Антенна',
     tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
-    price: 5247,
-    srock: '3 недели',
-    usl:'Частичная предоплата'
+    price:5247,
+    number:3
+  },{
+    name:'Источник питания импульсный',
+    tech:'0-60V-30A/QJE',
+    price:20600,
+    number:1
+  },{
+    name:'Источник питания',
+    tech:'APS-1262',
+    price:19500,
+    number:10
+  }]
+},
+  {number: 1332,
+    zakup: 11234,
+    date_start:new Date("12-11-2021"),
+    date_post:new Date("01-09-2022"),
+    project:'Афина',
+    status:'Не согласован',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
+  },
+  {number: 1333,
+    zakup: 11235,
+    date_start:new Date("12-29-2021"),
+    date_post:new Date("01-09-2022"),
+    project:'AMGH',
+    status:'Отправлен на согласование',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
+  },
+  {number: 1334,
+    zakup: 11236,
+    date_start:new Date("01-01-2022"),
+    date_post:new Date("01-09-2022"),
+    project:'LTE-Advanced',
+    status:'Создан',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
+  },
+  {number: 1335,
+    zakup: 11236,
+    date_start:new Date("01-11-2022"),
+    date_post:new Date("01-09-2022"),
+    project:'ZNVR',
+    status:'Создан',
+    izdel:[{
+      name:'Коммутатор',
+      tech:'ALLIED TELESIS AT-GS950/16-50',
+      price:10216,
+      number:1
+    },{
+      name:'Антенна',
+      tech:'AGATA MIMO 2x2 (3G MIMO + 4G MIMO)',
+      price:5247,
+      number:3
+    },{
+      name:'Источник питания импульсный',
+      tech:'0-60V-30A/QJE',
+      price:20600,
+      number:1
+    },{
+      name:'Источник питания',
+      tech:'APS-1262',
+      price:19500,
+      number:10
+    }]
   }
 ]

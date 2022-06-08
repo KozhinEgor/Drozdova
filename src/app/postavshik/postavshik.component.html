@@ -1,1 +1,150 @@
-<p>postavshik works!</p>
+<div class="Top-container">
+  <h1>Каточка поставщика: {{post.name}}</h1>
+  <div class="row">
+    <button mat-button >
+      <mat-icon>save</mat-icon>
+      Сохранить
+    </button>
+    <button mat-button >
+      <mat-icon>delete</mat-icon>
+      Удалить
+    </button>
+  </div>
+</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Карточка поставщика" >
+    <div class="centerBox">
+      <div class="row-cart">
+        <div class="row-cart-form">
+          <mat-form-field  appearance="outline" class="inp-name">
+            <mat-label>Название</mat-label>
+            <input matInput [(ngModel)]="post.name">
+          </mat-form-field>
+          <div style="width: 285px; margin-top: 20px;margin-left: 15px;" class="hed-name"><b>Рейтинг:</b> {{post.reiting}}</div>
+        </div>
+
+      </div>
+      <div class="row-cart">
+        <div class="hed-name">Контакты поставщика</div>
+        <div class="row-cart-form">
+          <mat-form-field  appearance="outline"class="inp-left">
+            <mat-label>ФИО</mat-label>
+            <input matInput [(ngModel)]="post.fio_cont">
+          </mat-form-field>
+          <mat-form-field  appearance="outline" class="inp-right">
+            <mat-label>Должность</mat-label>
+            <input matInput [(ngModel)]="post.dol_cont">
+          </mat-form-field>
+        </div>
+        <div class="row-cart-form">
+          <mat-form-field  appearance="outline" class="inp-left">
+            <mat-label>Телефон</mat-label>
+            <input matInput [(ngModel)]="post.tel_cont">
+          </mat-form-field>
+          <mat-form-field  appearance="outline" class="inp-right">
+            <mat-label>E-mail</mat-label>
+            <input matInput [(ngModel)]="post.email_cont">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row-cart">
+        <div class="hed-name">Информация о компании</div>
+        <div class="row-cart-form">
+          <mat-form-field  appearance="outline" class="inp-left">
+            <mat-label>Сайт организации</mat-label>
+            <input matInput [(ngModel)]="post.sait">
+          </mat-form-field>
+          <mat-form-field  appearance="outline" class="inp-right">
+            <mat-label>Адрес</mat-label>
+            <input matInput [(ngModel)]="post.address">
+          </mat-form-field>
+        </div>
+        <div class="row-cart-form">
+          <mat-form-field  appearance="outline" class="inp-left">
+            <mat-label>ИНН</mat-label>
+            <input matInput [(ngModel)]="post.inn">
+          </mat-form-field>
+          <mat-form-field  appearance="outline"  class="inp-right">
+            <mat-label>КПП</mat-label>
+            <input matInput [(ngModel)]="post.kpp">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row-cart">
+        <div class="hed-name">Банковские реквизиты</div>
+        <div class="row-cart-form">
+          <mat-form-field  appearance="outline" class="bank-left">
+            <mat-label>БИК</mat-label>
+            <input matInput [(ngModel)]="post.bik">
+          </mat-form-field>
+          <mat-form-field  appearance="outline"class="bank-center">
+            <mat-label>Расчетный счет</mat-label>
+            <input matInput [(ngModel)]="post.rasChet">
+          </mat-form-field>
+          <mat-form-field  appearance="outline" class="bank-right">
+            <mat-label>Корреспондентский счет</mat-label>
+            <input matInput [(ngModel)]="post.korSchet">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="Комплектующие изделия поставщика">
+    <div class="centerBox" >
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 1200px">
+
+        <!--- 'num','name_izdel','tech_spec','price','srock','uslov','reiting','edit' -->
+        <ng-container matColumnDef="num">
+          <th mat-header-cell *matHeaderCellDef> № </th>
+          <td mat-cell *matCellDef="let element" > {{dataSource.data.indexOf(element)+1}} </td>
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="name_izdel">
+          <th mat-header-cell *matHeaderCellDef> Наименование изделия </th>
+          <td mat-cell *matCellDef="let element" > {{element.name_izdel}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tech_spec">
+          <th mat-header-cell *matHeaderCellDef> Технические характеристики </th>
+          <td mat-cell *matCellDef="let element" > {{element.tech_spec}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Цена </th>
+          <td mat-cell *matCellDef="let element" > {{element.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="srock">
+          <th mat-header-cell *matHeaderCellDef> Срок поставки </th>
+          <td mat-cell *matCellDef="let element" > {{element.srock}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="uslov">
+          <th mat-header-cell *matHeaderCellDef> Условия платежа </th>
+          <td mat-cell *matCellDef="let element" > {{element.uslov}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="reiting">
+          <th mat-header-cell *matHeaderCellDef> Рейтинг </th>
+          <td mat-cell *matCellDef="let element" > {{element.reiting}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef> Изменить </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button style="color: #81D8D0">
+              <mat-icon>edit</mat-icon>
+            </button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="ds"></tr>
+        <tr mat-row *matRowDef="let row; columns: ds;"></tr>
+      </table>
+    </div>
+
+  </mat-tab>
+</mat-tab-group>

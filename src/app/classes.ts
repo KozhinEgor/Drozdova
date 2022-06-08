@@ -8,6 +8,13 @@ export interface zakup{
   iniator:string;
   project:string;
   date_plan_end:Date;
+  izdel: zakupIzdel[];
+}
+export interface zakupIzdel{
+  name: string;
+  tech_spec:string;
+  number: number;
+  number_sklad:number;
 }
 export interface zakupka{
   number: number;
@@ -25,9 +32,18 @@ export interface zakupka{
 }
 export interface zakaz{
   number:number;
+  zakup:number;
   date_start:Date;
   project:string;
+  date_post:Date;
   status:string;
+  izdel:zakazIzdel[];
+}
+export interface zakazIzdel{
+  name:string;
+  tech:string;
+  price:number;
+  number:number;
 }
 export interface sklad{
   name_izdel:string;
@@ -59,11 +75,28 @@ export interface Doc{
   name: string;
   date:Date;
 }
-export interface ReestrPostavshik{
-  name:string;
-  izd:string;
-  tech:string;
+export interface ProdPost{
+  name_izdel:string;
+  tech_spec:string;
   price: number;
   srock: string;
-  usl:string;
+  uslov: string;
+  reiting: number;
+}
+export interface ReestrPostavshik{
+  name:string;
+  reiting: number;
+  number_zak: number;
+  fio_cont:string;
+  email_cont:string;
+  dol_cont:string;
+  tel_cont:string;
+  sait:string;
+  address:string;
+  inn:string;
+  kpp:string;
+  bik:string;
+  rasChet:string;
+  korSchet:string;
+  prod:ProdPost[];
 }
