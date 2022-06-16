@@ -32,7 +32,7 @@ export class ZakupkaComponent implements OnInit {
     postavshick:[]
   };
   selectedStatus = 'Создана';
-  status =['Создана','Выбор поставщика','Заключение договора','Ожидание оплаты', 'Ожидает доставки', 'Завершена'];
+  status =['Создана','Выбор поставщика','Заключение договора','Ожидание оплаты', 'Завершена'];
   ds =['name_izdel','tech_spec','price','number','sum'];
   dc = ['selected','number','namePost','price','srock', 'uslov','reiting'];
   dcOnePostav = ['namePost','price','plan_date', 'dogovor','dateDogovor','schet','dateRascheta','DatePoluch'];

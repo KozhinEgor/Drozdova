@@ -134,7 +134,7 @@
     Загрузить счет-фактуру
   </button>
   <!--  Загрузить товарную накладную -->
-  <button mat-button *ngIf="selectedStatus == status[4]"
+  <button mat-button *ngIf="selectedStatus == status[3]"
           (click)="openDialog('Загружаю товарную накладную')"
   >
     <mat-icon>upload_file</mat-icon>
@@ -233,7 +233,7 @@
 
   <ng-container matColumnDef="schet">
     <th mat-header-cell *matHeaderCellDef> № счета </th>
-    <td mat-cell *matCellDef="let element" > <span *ngIf="selectedStatus == status[4] || selectedStatus == status[5]">{{element.schet}}</span> </td>
+    <td mat-cell *matCellDef="let element" > <span *ngIf="selectedStatus == status[3] || selectedStatus == status[5]">{{element.schet}}</span> </td>
   </ng-container>
 
   <ng-container matColumnDef="dateRascheta">
@@ -243,7 +243,7 @@
 
   <ng-container matColumnDef="DatePoluch">
     <th mat-header-cell *matHeaderCellDef> Дата получения </th>
-    <td mat-cell *matCellDef="let element" > <span *ngIf="selectedStatus == status[5]">{{element.DatePoluch | date:'dd.MM.yyyy': "UTC"}} </span></td>
+    <td mat-cell *matCellDef="let element" > <span *ngIf="selectedStatus == status[4]">{{element.DatePoluch | date:'dd.MM.yyyy': "UTC"}} </span></td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="dcOnePostav"></tr>
   <tr mat-row *matRowDef="let row; columns: dcOnePostav;"></tr>
